@@ -1,17 +1,15 @@
-(function () {
+// Wrap the entire contents of SpeakHello.js inside of an IIFE
+(function (window) {
+  var helloSpeaker = {}; // Create an object
 
-  // STEP 3: Create an object, called 'helloSpeaker'
-  var helloSpeaker = {};
+  var speakWord = "Hello"; // Do not attach speakWord to helloSpeaker
 
-  // DO NOT attach the speakWord variable to the 'helloSpeaker' object.
-  var speakWord = "Hello";
-
-  // STEP 4: Rewrite the 'speak' function to be attached to the 'helloSpeaker' object
-  helloSpeaker.speak = function(name) {
+  // Attach the speak method to helloSpeaker
+  helloSpeaker.speak = function (name) {
     console.log(speakWord + " " + name);
   };
 
-  // STEP 5: Expose the 'helloSpeaker' object to the global scope
+  // Expose helloSpeaker to the global scope
   window.helloSpeaker = helloSpeaker;
+})(window);
 
-})();
